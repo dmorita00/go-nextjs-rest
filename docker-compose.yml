@@ -24,10 +24,15 @@ services:
       - ./server:/code/server
     ports:
       - "18080:8080"
+      - "12345:2345"
     depends_on:
       - db
     tty: true
     stdin_open: true
+    security_opt:
+      - apparmor:unconfined
+    cap_add:
+      - SYS_PTRACE
 #    networks:
 #      - dothecasting
 
