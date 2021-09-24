@@ -22,7 +22,10 @@ func main() {
 	{
 		v1 := testEngine.Group("/v1")
 		{
-			v1.GET("/list", controller.Test)
+			v1.GET("/list", controller.TestList)
+			v1.POST("/add", controller.TestAdd)
+			v1.PUT("/update", controller.TestUpdate)
+			v1.DELETE("/delete", controller.TestDelete)
 		}
 	}
 	r.Run() // listen and serve on 0.0.0.0:8080

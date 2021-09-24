@@ -1,6 +1,11 @@
 package model
 
+import "time"
+
 type Test struct {
-	Id   int64  `xorm:"pk autoincr int(64)" form:"id" json:"id"`
-	Name string `xorm:"varchar(40)" json:"name" form:"name"`
+	Id        uint `gorm:"primary_key" json:"id"`
+	Name      string
+	CreatedAt time.Time
+	UpdatedAt time.Time
+	DeletedAt *time.Time `sql:"index" json:"-"`
 }

@@ -1,24 +1,50 @@
 package service
 
 import (
+	"server/config"
 	"server/model"
 )
 
 type TestService struct{}
 
-func (TestService) SetTest(book *model.Test) error {
-	_, err := DbEngine.Insert(book)
-	if err != nil {
-		return err
+var test model.Test
+var tests []model.Test
+
+func (TestService) SetTest(test *model.Test) error {
+	db := config.GetConn()
+	defer db.Close()
+	result := db.Create(&test)
+	if result.Error != nil {
+		return result.Error
 	}
 	return nil
 }
 
 func (TestService) GetTestList() []model.Test {
-	tests := make([]model.Test, 0)
-	err := DbEngine.Distinct("id", "name").Limit(10, 0).Find(&tests)
-	if err != nil {
-		panic(err)
-	}
+	db := config.GetConn()
+	defer db.Close()
+	db.Find(&tests)
 	return tests
+}
+
+func (TestService) UpdateTest(newTest *model.Test) error {
+	db := config.GetConn()
+	defer db.Close()
+	db.First(&test)
+	result := db.Save(newTest)
+	if result.Error != nil {
+		return result.Error
+	}
+	return nil
+}
+
+func (TestService) DeleteTest(id int) error {
+	db := config.GetConn()
+	defer db.Close()
+	db.First(&test)
+	result := db.Delete(&test, id)
+	if result.Error != nil {
+		return result.Error
+	}
+	return nil
 }

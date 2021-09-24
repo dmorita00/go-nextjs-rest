@@ -16,6 +16,8 @@ require (
 	github.com/go-xorm/xorm v0.7.9 // indirect
 	github.com/golang/protobuf v1.3.3 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
+	github.com/jinzhu/gorm v1.9.16 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.9 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/mattn/go-colorable v0.1.8 // indirect
