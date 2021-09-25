@@ -1,6 +1,5 @@
 package main
 
-//import "github.com/gin-gonic/gin"
 import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -36,5 +35,8 @@ func main() {
 			v1.DELETE("/delete", controller.TestDelete)
 		}
 	}
-	r.Run() // listen and serve on 0.0.0.0:8080
+	err := r.Run()
+	if err != nil {
+		return
+	} // listen and serve on 0.0.0.0:8080
 }
