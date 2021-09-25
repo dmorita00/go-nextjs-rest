@@ -2,6 +2,7 @@ package main
 
 //import "github.com/gin-gonic/gin"
 import (
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 	"server/controller"
@@ -9,6 +10,13 @@ import (
 
 func main() {
 	r := gin.Default()
+
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{
+		"http://localhost:13000",
+	}
+	r.Use(cors.New(config))
+
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "pong",

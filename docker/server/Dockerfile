@@ -8,6 +8,7 @@ RUN go get github.com/go-sql-driver/mysql
 RUN go get github.com/jinzhu/gorm
 RUN go get go.uber.org/zap
 RUN go get -u github.com/cosmtrek/air
+RUN go get github.com/gin-contrib/cors
 # local debug
 RUN go install github.com/go-delve/delve/cmd/dlv@latest
 
