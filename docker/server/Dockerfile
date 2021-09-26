@@ -13,4 +13,4 @@ RUN go get github.com/gin-contrib/cors
 RUN go install github.com/go-delve/delve/cmd/dlv@latest
 
 #CMD ["go", "run", "main.go"]
-CMD ["air", "-c", ".air.toml"]
+#CMD ["air", "-c", ".air.toml"]
