@@ -53,8 +53,8 @@ $ yarn dev
 
 # MySQL
 
-host:     localhost
-port:     13306
-database: example
-user:     example
-password: example
+- host:     localhost
+- port:     13306
+- database: example
+- user:     example
+- password: example
