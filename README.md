@@ -20,7 +20,7 @@ $ docker-compose up -d --build
 # Go
 
 ```shell
-$ docker-compose exec server bash
+$ docker-compose exec server sh
 $ go install
 ```
 
@@ -46,7 +46,7 @@ $ air -c .air.toml
 # Next.js
 
 ```shell
-$ docker-compose exec client bash
+$ docker-compose exec client sh
 $ yarn
 $ yarn dev
 ```
