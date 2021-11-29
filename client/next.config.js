@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
   env: {
-    ...require(`./config/${process.env.APP_ENV || 'local'}.json`),
+    ...require(`./config/${process.env.NODE_ENV || 'local'}.json`),
   }
 }
