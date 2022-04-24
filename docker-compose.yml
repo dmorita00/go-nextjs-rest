@@ -51,6 +51,7 @@ services:
       - "./mysql_data/mysql:/var/lib/mysql"
       - "./docker/db/my.conf:/etc/mysql/my.conf"
       - "./docker/db/init/:/docker-entrypoint-initdb.d"
+    tty: true
 
 networks:
   dothecasting:
